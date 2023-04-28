@@ -70,7 +70,7 @@ const AllEvents = ({data}) => {
           </div>
          {/* First Modal */}
          {showModal ? (
-           <m.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{ opacity: 0 }}>
+           <div initial={{opacity: 0}} animate={{opacity: 1}} exit={{ opacity: 0 }}>
 
            <div
                className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
@@ -167,7 +167,7 @@ const AllEvents = ({data}) => {
            </div>
            </div>
            <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-           </m.div>
+           </div>
         ) : null }               
       </div>    
     </>

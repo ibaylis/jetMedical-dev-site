@@ -6,6 +6,8 @@ import JetCarousel from '../../components/carousel'
 import homeHeaderIMG from "../../../public/images/homeheader_1.jpg"
 import contactHeader from "../../../public/images/contactheader.png";
 
+import cvc1MainIMG from "../../../public/images/CVC_1.jpg";
+
 import { Carousel } from "flowbite-react";
 
 import { Alert } from "flowbite-react";
@@ -51,12 +53,13 @@ const homePage = ({data}) => {
         <div className='contentHeadingProduct'>Product Lines</div>
         <div className='home_body'>
           {data?.slice(0, 4).map((ev) => (
-            <Link className='card' key={ev.id} href={`/projectsProductPage`}>
+            <Link className='card' key="1" href={`/projectsProductPage`}>
               <div className='image'>
-                <Image width={216} height={216} alt={ev.title} src={ev.image} />
+                <Image width={216} height={216} alt="CVC" src={cvc1MainIMG} />
               </div>
               <div className='content'>
-                <h2> {ev.title} </h2>
+                <h2>DIALYSIS</h2>
+                {/* <h2> {ev.title} </h2> */}
                 {/* <p> {ev.description} </p> */}
               </div>
             </Link>

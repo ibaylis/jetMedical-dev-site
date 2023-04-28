@@ -1,0 +1,138 @@
+.bodyJetProd {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.bodyJetProd {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 3rem;
+    
+}
+.containerJetProd {
+    max-width: 950px;
+    width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    margin: 0;
+    padding: 2px;
+}
+
+.containerJetProd .main-title {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.containerJetProd .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.containerJetProd .content .list {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 20%;
+    margin-right: 50px;
+}
+
+.content .list label {
+    height: 150px;
+    font-size: 22px;
+    font-weight: 500;
+    border-radius: 12px;
+    line-height: 60px;
+    cursor: pointer;
+    
+    padding-left: 25px;
+    color: #333;
+    z-index: 12;
+    transition: all 0.4s ease;
+}
+
+.content .list label:hover {
+    color: #6d50e2;
+}
+
+#home:checked ~ .list .home,
+#blog:checked ~ .list .blog,
+#help:checked ~ .list .help,
+#code:checked ~ .list .code,
+#about:checked ~ .list .about {
+    color: #fff;
+}
+
+.content .indicator {
+    position: absolute;
+    height: 10rem;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #ffd51f;
+    border-radius: 12px;
+    transition: all 0.4s ease;
+}
+
+
+
+#home:checked ~ .indicator {
+    top: 0;
+}
+#blog:checked ~ .list .indicator {
+    top: 200px;
+}
+#help:checked ~ .list .indicator {
+    top: 500px;
+}
+#code:checked ~ .list .indicator {
+    top: 180px;
+}
+#about:checked ~ .list .indicator {
+    top: 240px;
+}
+
+.containerJetProd input[type="radio"] {
+    display: none;
+} 
+
+.containerJetProd .content .textContent {
+    width: 80%;
+    height: 100%;
+}            
+
+.containerJetProd .textContent .text {
+    display: none;
+}    
+
+.containerJetProd .textContent .home {
+    display: block;
+}        
+
+#home:checked ~ .textContent .home,
+#blog:checked ~ .textContent .blog,
+#help:checked ~ .textContent .help,
+#code:checked ~ .textContent .code,
+#about:checked ~ .textContent .about {
+    display: block;
+}
+
+#blog:checked ~ .textContent .home,
+#help:checked ~ .textContent .home,
+#code:checked ~ .textContent .home,
+#about:checked ~ .textContent .home {
+    display: none;
+}            
+
+.containerJetProd .textContent .title {
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.containerJetProd .textContent p {
+    text-align: justify;
+}     

@@ -1,3 +1,8 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -14,6 +19,23 @@ a {
 * {
   box-sizing: border-box;
 }
+/* .navbar-nav {
+  display: inline-block !important;
+} */
+
+:root {
+  --primary: #7F56D9;
+  --secondary: #F4EBFF;
+  --text-primary: #bebebe;
+  --text-secondary: #667085;
+  --badge-bg: #ECFDF3;
+  --badge-text: #027A48;
+  --white: #fff;
+  --dropdown-bg: rgb(252, 253, 251);
+  --shadow: rgba(32, 7, 65, 0.14);
+  --container: 124rem;
+  --nav-height: 2rem;
+}
 
 @media (prefers-color-scheme: dark) {
   html {
@@ -24,3 +46,218 @@ a {
     background: black;
   }
 }
+
+
+.containerJet {
+  /* max-width: var(--container); */
+  margin: 0 auto;
+  padding: 0 1rem;
+  z-index: 100;
+}
+
+.navigationJet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: var(--nav-height);
+  position: relative;
+}
+
+.logoJet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
+.headerNavBackground {
+  background-color: #ffd51f
+}
+
+.nav_listJet {
+  display: inline-flex;
+  gap: 2rem;
+  padding: 1.25rem;
+  align-items: center;
+  margin: 0 0.5rem;
+}
+
+.nav_actionJet {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav_linkJet {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-weight: 500;
+  color: #0053a1;
+}
+
+.btnJet {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.btnJet-primary {
+  display: inline-flex;
+  color: var(--white);
+  background: var(--primary);
+  font-weight: 500;
+  padding: 0.6rem 1.5rem;
+}
+
+.nav_toggleJet {
+  cursor: pointer;
+  display: none;
+}
+
+.nav_toggleJet .jetIcon {
+  font-size: 3.5rem;
+  color: var(--text-primary);
+}
+sup {
+  position: absolute;
+}
+
+.dropdownJet {
+  position: absolute;
+  top: var(--nav-height);
+  left: 1rem;
+  width: 50rem;
+  
+  /* width: 100%; */
+  top: 1.9rem;
+  /* left: 0;
+  width: 100%; */
+  /* background-color: var(--white); */
+  background-color: rgba(255,255,255,.95);
+  box-shadow: 0rem 0.2rem 0.5rem var(--shadow);
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition: all 0.5s ease-in;
+}
+
+.dropdown-innerJet {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 2fr));
+  gap: 2rem;
+  padding-left: 2rem;
+}
+
+.nav_list_menuJet:hover .jetIcon {
+  transition: all 0.5s ease-in;
+  transform: rotate(180deg);
+}
+
+.nav_list_menuJet:hover .dropdownJet {
+  clip-path: polygon(0 0,100% 0,100% 102%,0 102%);
+}
+.item-headingJet {
+  font-weight: bold;
+  color: #333;
+  border-bottom: 2px solid;
+  margin: 1.5rem 2.5rem 0 0;
+}
+
+.item-listJet {
+  display: flex;
+  color:#667085;
+  align-items: center;
+  gap: 1rem;
+  margin: 0.75rem 0;
+}
+
+.item-imgJet {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--secondary);
+}
+
+.item-list-infoJet {
+  position: relative;
+  width: 100%
+}
+
+.info-badgeJet {
+  position: absolute;
+  right: 1rem;
+  top: 0;
+  background: var(--badge-bg);
+  padding: 0.1rem 0.5rem;
+  border-radius: 1rem;
+  color: var(--badge-text);
+}
+
+/* [data-testid="carousel"] {
+  width: 50% !important;
+  height: 50% !important;
+} */
+
+@media (max-width: 730px) {
+  .nav_toggleJet {
+    display: block;
+  }
+
+  .nav_menuJet {
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    background: var(--dropdown-bg);
+    display: none;
+  }
+
+  .nav_menuJet.active {
+    display: block;
+  }
+
+  .nav_listJet {
+    display: block;
+    margin: 2rem 0;
+    text-align: center;
+  }
+
+  .nav_linkJet {
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .dropdownJet {
+    top: 0;
+    position: relative;
+    clip-path: polygon(0 0,100% 0,100% 0,0 0);
+    box-shadow: none;
+    height: 0;
+    text-align: start;
+    transition: all 0.5s ease-in;
+  }
+
+  .nav_list_menuJet:hover .dropdownJet {
+    height: 100%;
+    transition: all 0.5s ease-in;
+  }
+}
+
+@media (max-width:365px){
+  .logoJet {
+    width: 10rem;
+  }
+  .btnJet,
+  .btnJet-primary {
+    padding: 0.4rem 1rem;
+  }
+}
+
+
+
